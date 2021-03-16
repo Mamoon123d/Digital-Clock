@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body onload=clock()>
+    <section>
+      <div class="clock">
+        <div class="container">
+          <h1 id="hour">24</h1>
+          <h1 class="dots">:</h1>
+          <h1 id="minutes">60</h1>
+          <h1 class="dot">:</h1>
+          <h1 id="seconds">00</h1>
+          <span id="am">AM</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <script>
+      function clock() {
+        let hour = document.getElementById("hour");
+        let minutes = document.getElementById("minutes");
+        let seconds = document.getElementById("seconds");
+        let ampm = document.getElementById("am");
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        var am = "AM";
+        if(h>12){
+            h=h-12;
+        }
+
+
+        hour.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+      }
+      var interval = setInterval(clock, 1000);
+    </script>
+  </body>
+</html>
